@@ -1,5 +1,6 @@
 import app from "./app.js";
-import env from "../src/config/env.config.js";
+import config_env from "./config/config.js";
 
-app.listen(env.port);
-console.log(`Server running on http://localhost:${env.port}`);
+app.listen(config_env.port, function () {
+  console.log("Run server in port:", config_env.port);
+});
