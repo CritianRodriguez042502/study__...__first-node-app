@@ -4,7 +4,7 @@ import sequelize from "./db/config.js";
 
 
 // Import models
-import "./db/models/index.js";
+import "./db/models/index.models.js";
 
 
 // run server with port defined in .env
