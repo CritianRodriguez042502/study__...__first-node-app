@@ -12,8 +12,7 @@ import "./db/models/index.models.js";
 
 const run_server = async () => {
   try {
-    await sequelize.sync({force : false});
-
+    // await sequelize.sync({force : false});
     app.listen(config_env.port);
     console.log(`Server running on port: ${config_env.port}`);
   } catch (err) {

@@ -1,19 +1,19 @@
 export function read_tasks ( req, res ) {
-    res.end("read tasks");
+    res.send("read tasks");
 }
 
 export function read_task_detail ( req, res ) {
-    res.end("read task detail");
+    res.send("read task detail");
 }
 
 export function create_task ( req, res ) {
-    res.end("create task");
+    res.send("create task");
 }
 
 export function update_task ( req, res ) {
-    res.end("update task");
+    res.send("update task");
 }
 
 export function delete_task ( req, res ) {
-    res.end("delete task");
+    res.send("delete task");
 }

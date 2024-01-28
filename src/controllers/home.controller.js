@@ -1,3 +1,3 @@
 export function Home(req, res) {
-  res.end("hello world");
+  res.send("hello world");
 }
