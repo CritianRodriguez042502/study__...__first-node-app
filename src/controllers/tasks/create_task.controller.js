@@ -1,31 +1,19 @@
 import { Tasks } from "../../db/models/index.models.js";
+import utils from "../../utils/index.utils.js"
 
 export async function create_task(req, res) {
   const { title, description, status } = req.body;
   
-  // create task
-  let jsonResponse;
-  try {
-    const newTask = await Tasks.create({
-      title,
-      description,
-      status,
-    });
+  // validation logic
+  let isString = utils.common.isString;
+  let isEmpty = utils.common.isEmpty;
+  let isboolean = utils.common.isBoolean;
 
-    jsonResponse = {
-      message: "The task has been created correctly",
-      status: 201,
-      data: newTask,
-    };
-    return res.status(201).send(jsonResponse);
-  } catch (error) {
-    jsonResponse = {
-      message: "Error creating the task",
-      status: 500,
-      error: error.message,
-    };
-    console.error(error);
-    return res.status(500).send(jsonResponse);
+  if (!isEmpty(res, title)  ) {
+    return;
   }
+
+
+  res.send("create task");
 }
 
