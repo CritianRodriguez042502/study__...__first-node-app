@@ -1,9 +1,23 @@
-export function isString(res, value) {
+export function isString(res, value, name) {
   if (typeof value === "string") {
-    return true;
+    if (isNaN(Number(value))) {
+      return true;
+    } else {
+      const jsonResponse = {
+        message: {
+          value_name : name,
+          detailed_message : "The value of the string must be a letter, numeric characters are not accepted"
+        },
+        status: 400,
+      };
+      res.status(400).json(jsonResponse);
+      return false;
+    }
   } else {
     const jsonResponse = {
-      message: "The value must be a string",
+      message: {
+        name : "The value must be a data type: text string"
+      },
       status: 400,
     };
     res.status(400).json(jsonResponse);
@@ -11,7 +25,7 @@ export function isString(res, value) {
   }
 }
 
-export function isNumber(res,value) {
+export function isNumber(res, value) {
   if (typeof value === "number") {
     return true;
   } else {
@@ -24,7 +38,7 @@ export function isNumber(res,value) {
   }
 }
 
-export function isBoolean(res,value) {
+export function isBoolean(res, value) {
   if (typeof value === "boolean") {
     return true;
   } else {
@@ -37,7 +51,7 @@ export function isBoolean(res,value) {
   }
 }
 
-export function isDecimal(res,value) {
+export function isDecimal(res, value) {
   if (typeof value === "number" && !isNaN(value) && Number.isInteger(value)) {
     return true;
   } else {

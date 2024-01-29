@@ -9,7 +9,7 @@ export function isEmpty(res,value) {
     return false;
   }
 
-  // number
+  // number 0
   if (typeof value === "number" && value === 0) {
     const jsonResponse = {
       message: "The value cannot be zero",
