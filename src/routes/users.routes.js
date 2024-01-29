@@ -3,7 +3,7 @@ import controllers from "../controllers/index.controllers.js";
 
 const router = Router();
 
-router.get("/", controllers.home);
+router.get("/", controllers.users.home);
 
 
 export default router;
