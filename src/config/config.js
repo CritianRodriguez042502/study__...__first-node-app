@@ -4,7 +4,7 @@ config();
 
 // Config environment variables
 export default {
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 8000,
 
   // Postgres
   db_port: process.env.DB_PORT,
