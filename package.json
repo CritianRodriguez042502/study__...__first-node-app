@@ -1,5 +1,5 @@
 {
-  "name": "crudserver",
+  "name": "crudserverr",
   "version": "1.0.0",
   "description": "crud made with node and express",
   "main": "index.js",
